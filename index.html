@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Date and Time</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body,html{
+            /* background-color: #50CB93; */
+            height: 100%;
+            
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .container{
+            background-color: #50CB93;
+            /* background-color: #54436B; */
+            height: 500px;
+            width: 599px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+         
+        .day{
+            display: flex;
+            color: black;
+        }
+
+    
+    
+    .time{
+        display: flex;
+        color: black;
+        margin-top: 10px;
+    }
+    .bg{
+        width: fit-content;
+        background-color: white;
+        color: black;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+    
+    #triangle-up {
+      width: 0;
+      height: 0;
+      border-left: 95px solid transparent;
+      border-right: 95px solid transparent;
+      border-bottom: 190px solid red;
+    }
+
+    #one{
+        position: relative;
+        left: 65px;
+        bottom: -95px;
+    }
+
+    #two{
+        position: relative;
+        right: 156px;
+        bottom: -60px;
+    }
+
+
+    #three{
+        position: relative;
+        bottom: -132px;
+        left: -45px; 
+    }
+
+    .field{
+        height: 28px;
+        width: 85px;
+        border-radius: 10px;
+    }
+
+    .btn{
+        height: 55px;
+        width: 100px;
+        position: relative;
+        left: -155px;
+        bottom: -60px;
+        background-color: cornflowerblue;
+        color: white;
+        border-radius: 15px;
+    }
+
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+
+
+        <div class="container">
+            <h1>The area of a triangle</h1>
+            <span id="triangle-up">
+               <!-- <h2 id="one">10</h1>
+               <h2 id="two">20</h1>
+               <h2 id="three">30</h1> -->
+                <input type="text" name="" id="one" class="field" placeholder="Enter the Value">
+                <input type="text" name="" id="two" class="field" placeholder="Enter the Value">
+                <input type="text" name="" id="three" class="field" placeholder="Enter the Value">
+
+                
+            </span>
+            <div class="getdata">
+
+                <button class="btn" onclick="area()">Get Area</button>
+                <h1>Are of Triangle is: </h1>
+                <h1 id="res"></h1>
+            </div>
+
+            </div>
+          
+        </div>
+    </div>
+ <script>
+     
+     area = () => {
+       
+         var side1 = parseInt(document.getElementById('one').value);
+         var side2 = parseInt(document.getElementById('two').value);
+         var side3 = parseInt(document.getElementById('three').value);
+    
+         var s = (side1 + side2 + side3)/2;
+         var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
+
+        document.getElementById("res").innerHTML = area
+     }
+ </script>
+  
+</body>
+</html>
